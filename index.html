@@ -1,12 +1,621 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple HTML Page</title>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="HumanDreamer-X: Photorealistic Single-image Human Avatars Reconstruction via Gaussian Restoration">
+  <meta name="keywords" content="HumanDreamer">
+  <!-- <meta name="google-site-verification" content="ciQsol-i_rwd2kkpVI_G-EFX4g72KA2HF-cDUi52lIo" /> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- <meta property="og:image" content="static/images/teaser.pdf"/> -->
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <title>HumanDreamer-X: Photorealistic Single-image Human Avatars Reconstruction via Gaussian Restoration</title>
+  <!-- <link rel="icon" type="image/x-icon" href="static/images/motion.png"> -->
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
 </head>
 <body>
-    <h1>Hello, World!</h1>
-    <p>This is a simple HTML page.</p>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">HumanDreamer-X: Photorealistic Single-image Human Avatars Reconstruction via Gaussian Restoration</h1>
+            <!-- <h1 class="title is-2 publication-title"><strong><span style="color:#5e7dbd";>MotionStreamer</span></strong>: <span style="color:#EE822F";>Streaming Motion Generation </span> <br> via <span style="color:#069b1c";>Diffusion-based Autoregressive Model</span> <br> in <span style="color:#a50c07";>Causal Latent Space</span></h1> -->
+            <!-- <span style="color: rgb(219, 13, 78); font-size: 1.2em;">Arxiv2025</span> -->
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=Wp7sUlIAAAAJ&hl=en" target="_blank">Boyuan Wang<sup>1,2*</sup></a>,&nbsp</span>
+              <span class="author-block">
+                <a href="" target="_blank">Runqi Ouyang<sup>1,2*</sup></a>,&nbsp</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=5IJ0Yg4AAAAJ&hl=en" target="_blank">Xiaofeng Wang<sup>1,2*</sup></a>,&nbsp</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?hl=en&user=DSjGPu0AAAAJ" target="_blank">Zheng Zhu<sup>1*</sup></a>,&nbsp</span>
+              <span class="author-block">
+                <a href="https://scholar.google.com/citations?user=C3BbrU4AAAAJ&hl=en" target="_blank">Guosheng Zhao<sup>1,2</sup></a>,&nbsp</span>
+              <span class="author-block">
+                <a href="" target="_blank">Chaojun Ni<sup>1,3</sup></a>,&nbsp</span>
+              <br>
+              <span class="author-block">
+                <a href="" target="_blank">Guan Huang<sup>1</sup></a>,&nbsp</span>
+              <span class="author-block">
+                <a href="" target="_blank">Lihong Liu<sup>2</sup></a>,&nbsp</span>
+              <span class="author-block">
+                <a href="" target="_blank">Xingang Wang<sup>1,2</sup></a></span>
+            </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block" style="margin-right: 20px;"><sup>1</sup> GigaAI </span>
+                    <span class="author-block" style="margin-right: 20px;"><sup>2</sup> Institute of Automation, Chinese Academy of Sciences, China </span>
+                    <!-- <span class="author-block" style="margin-right: 20px;"><sup>3</sup> Luoyang Institute for Robot and Intelligent Equipment, China </span> -->
+                    <!-- <span class="author-block" style="margin-right: 20px;"><sup>4</sup> GigaAI, China </span> -->
+                    <span class="author-block" style="margin-right: 20px;"><sup>3</sup> Peking University, China </span>
+                    <!-- <span class="author-block" style="margin-right: 20px;"><sup>6</sup> The Chinese University of Hong Kong </span> -->
+
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links" style="display: flex; justify-content: center; align-items: center; gap: 10px;">
+                      <!-- ArXiv abstract Link -->
+                      <span class="link-block">
+                        <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">               
+                          <span class="icon">
+                            <i class="ai ai-arxiv"></i>
+                          </span>
+                          <span>arXiv</span>
+                        </a>
+                      </span>
+                      
+                      <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                          <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Paper</span>
+                        </a>
+                      </span>
+
+                      <!-- Github link -->
+                      <!-- <span class="link-block" style="display: flex; align-items: center; gap: 10px;"> -->
+                        <!-- <a href="https://github.com/GigaAI-research/HumanDreamer" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                          <span class="icon">
+                            <i class="fab fa-github"></i>
+                          </span>
+                          <span>GitHub</span>
+                        </a> -->
+                        <!-- <a href="https://github.com/GigaAI-research/HumanDreamer" target="_blank" class="github-badge" style="background: #24292e; color: white; padding: 5px 10px; border-radius: 15px; text-decoration: none; font-size: 0.9em; display: flex; align-items: center; gap: 5px;">
+                          <i class="fas fa-star" style="color: #f1e05a;"></i>
+                          <span class="github-stars"></span>
+                        </a> -->
+                      <!-- </span> -->
+
+                      <span class="link-block">
+                        <a href="https://github.com/GigaAI-research/HumanDreamer-X" class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fab fa-github"></i>
+                          </span>
+                          <span>Code (Coming Soon)</span>
+                        </a>
+                      </span>
+                      <!-- <span class="link-block">
+                        <a href="https://github.com/GigaAI-research/HumanDreamer" class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fab fa-github"></i>
+                          </span>
+                          <span>Datset (Coming Soon)</span>
+                        </a>
+                      </span> -->
+                    </div>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <img src="static/images/main_demo.png" width="100%" style="height:auto;" alt="teaser">
+      <div class="videobox" style="margin-top: 20px;"></div>
+        <video autoplay controls muted loop width="100%" style="height:auto;">
+          <source src="static/images/main_demo.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero ">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Single-image human reconstruction is vital for digital human modeling applications but remains an extremely challenging task. Current approaches rely on generative models to synthesize multi-view images for subsequent 3D reconstruction and animation. However, directly generating multiple views from a single human image suffers from geometric inconsistencies, resulting in issues like fragmented or blurred limbs in the reconstructed models.
+            To tackle these limitations, we introduce HumanDreamer-X, a novel framework that integrates multi-view human generation and reconstruction into a unified pipeline, which significantly enhances the geometric consistency and visual fidelity of the reconstructed 3D models. In this framework, 3D Gaussian Splatting serves as an explicit 3D representation to provide initial geometry and appearance priority. Building upon this foundation, HumanFixer is trained to restore 3DGS renderings, which guarantee photorealistic results.
+            Furthermore, we delve into the inherent challenges associated with attention mechanisms in multi-view human generation, and propose an attention modulation strategy that effectively enhances geometric details identity consistency across multi-view.
+            Experimental results demonstrate that our approach markedly improves generation and reconstruction PSNR quality metrics by 16.45% and 12.65%, respectively, achieving a PSNR of up to 25.62 dB, while also showing generalization capabilities on in-the-wild data and applicability to various human reconstruction backbone models.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Paper method
+<section class="section hero">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Diagnosis</h2>
+        <div class="container is-centered" style="max-width: 55vw; overflow: hidden;">
+          <img src="static/images/architecture.png" style="width: 100%; height: auto;" scrolling="no" frameborder="0">
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<!-- Paper method -->
+<section class="section hero">
+  <div class="container">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-full">
+        <h2 class="title is-3">Method Overview</h2>
+        <div class="columns is-centered" style="gap: -20px;">
+          <div class="column is-11">
+            <div class="container is-centered" style="max-width: 100%; height: 350px; overflow: hidden; margin-bottom: -10px;">
+              <img src="static/images/framework.png" style="width: 100%; height: 100%; object-fit: contain; margin-left: 0%;">
+            </div>
+            <p class="has-text-left" style="margin-top: 5px; font-size: 1em;">
+              Overall framework of the proposed HumanDreamer-X. The process begins by initializing a coarse 3DGS avatar using a reference image. 
+              A rendered video serves as a guide, providing geometric and appearance priors. 
+              Subsequently, HumanFixer performs video restoration, wherein an attention modulation is employed to enhance video consistency. 
+              Throughout this process, the restored video is used to continuously update the 3DGS model, ultimately resulting in a refined 3DGS avatar.
+            </p>
+          </div>
+        </div>
+        <div class="columns is-centered" style="gap: -20px; margin-top: 20px;">
+          <div class="column is-11">
+            <div class="container is-centered" style="max-width: 100%; height: 350px; overflow: hidden; margin-bottom: -10px;">
+              <img src="static/images/dataset_collection.png" style="width: 100%; height: 100%; object-fit: contain; margin-left: 0%;">
+            </div>
+            <p class="has-text-centered" style="margin-top: 5px; font-size: 1em;"></p>
+              The pipeline of dataset collection.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!---           Gallery       -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Comparison of Generation</h2>
+    </div>
+    <br>
+    <div class="container">
+
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/Fig4-1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div style="white-space: nowrap;">
+              <i>
+                A man is <span style="color:#ff3838;">holding</span> his head in his hands and continues to do so while <span style="color:#ff3838;">looking down</span> at them.
+              </i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/Fig4-2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <i>
+              A woman is <span style="color:#ff3838;">dancing</span>, moving her arms and legs around.
+            </i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Comparison of 3D Reconstruction</h2>
+    </div>
+    <br>
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/Fig1-1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div style="white-space: nowrap;">
+              <i>
+                A man is  <span style="color:#ff3838">speaking</span> to the camera and then <span style="color:#ff3838">looking off</span> into the distance. Later, he is speaking to the camera again.
+              </i>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/Fig1-2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div style="white-space: nowrap;">
+              <i>
+                A man is <span style="color:#ff3838"> performing a yoga pose</span> on a mat, and he is seen <span style="color:#ff3838">moving</span> his legs and arms in different positions.              </i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- 
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Comparison of Text-to-Video</h2>
+    </div>
+    <br>
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <h3 class="title is-5">HumanDreamer</h3>
+            <div class="videobox">
+              <video autoplay controls muted loop>
+                <source src="./static/images/Humandreamer-book.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <h3 class="title is-5">CogVideo-X</h3>
+            <div class="videobox">
+              <video autoplay controls muted loop>
+                <source src="./static/images/Fig5-Video/CogVideoX-book.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <h3 class="title is-5">Mochi-1</h3>
+            <div class="videobox">
+              <video autoplay controls muted loop>
+                <source src="./static/images/Fig5-Video/Mochi1-book.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <i>A man is <span style="color:#ff3838;">sitting</span> at a table, <span style="color:#ff3838;">holding</span> a book. He <span style="color:#ff3838;">turns</span> the pages and then <span style="color:#ff3838;">holds it up</span> to the camera.</i>
+    </div>
+
+    <br>
+
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <div class="videobox">
+              <video autoplay controls muted loop>
+                <source src="./static/images/Humandreamer-dance.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <div class="videobox">
+              <video autoplay controls muted loop>
+                <source src="./static/images/Fig5-Video/CogVideoX-dance.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="content has-text-centered">
+            <div class="videobox">
+              <video autoplay controls muted loop>
+                <source src="./static/images/Fig5-Video/Mochi1-dance.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="columns is-centered has-text-centered">
+      <i>A woman <span style="color:#ff3838;">performs</span> a belly dance routine in front of a black curtain, <span style="color:#ff3838;">moving</span> her hips and torso fluidly with <span style="color:#ff3838;">raised</span> arms.</i>
+    </div>
+  </div>
+</section> -->
+
+<!-- Pose Sequence Prediction -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <h2 class="title is-3">Pose Sequence Prediction</h2>
+    </div>
+    <br>
+    Text-to-Pose model can infer and generate missing parts by conditioning on existing poses and textual movement descriptions.
+
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <div class="videobox">
+              <video poster="" autoplay controls muted loop height="100%">
+                <source src="./static/images/seq_pred.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="columns" style="margin-top: 10px;">
+              <div class="column has-text-centered">
+                <i>
+                  A man is using an ax to <span style="color:#ff3838;">chop</span> wood in a forest, <span style="color:#ff3838;">swinging</span> the ax and continuing to chop.
+                </i>
+              </div>
+              <div class="column has-text-centered">
+                <i>
+                  A man is <span style="color:#ff3838;">lifting</span> a barbell over his head and then <span style="color:#ff3838;">dropping</span> it to the ground.                </i>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- <section class="hero is-small">
+    <div class="hero-body">
+      <br>
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3"><span style="color:#ec0404";> Multi-round </span> Text-to-motion Generation</h2>
+      <br>
+      </div>
+      <div class="columns is-centered has-text-centered">
+        <h2 class="subtitle is-5 handwriting" style="height: 40px; margin: left 5px; margin: right 5px"><i> We build an <span style="color:#069b1c";>interactive </span> <span style="color:#EE822F";>Blender Add-on </span> for <span style="color:#5e7dbd";> multi-round generation </span> supported in our work </span>.</i></h2>
+      </div> 
+      
+      <div class="container">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content has-text-centered">
+            <h2 class="subtitle is-5 handwriting" style="height: 40px; margin: left 5px; margin: right 5px"><i> A man is <span style="color:#5e7dbd";>jogging</span> around</span>.</i></h2>
+            <div class="videobox">
+            <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+              <source src="./static/images/gallery/multi.mp4"
+                      type="video/mp4">
+            </video>
+            </div>
+          </div>
+        </div>
+        </div>
+  
+      </div>
+      
+</section> -->
+
+
+<!-- <section class="hero is-small">
+      <div class="hero-body">
+        <br>
+        <div class="columns is-centered has-text-centered">
+          <h2 class="title is-3">Dynamic Motion Composition</h2>
+        
+        </div>
+        <div class="columns is-centered has-text-centered">
+          <h2 class="subtitle is-5 handwriting" style="height: 40px; margin: left 5px; margin: right 5px"><i> <br> We support <span style="color:#069b1c";>regenerating</span> subsequent motions by <span style="color:#EE822F";>altering textual conditions</span> while <span style="color:#f11008";>preserving the initially generated prefix motion</span>.</i></h2>
+        </div>
+
+        
+        <div class="container">
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <h2 class="subtitle is-5 handwriting" style="height: 40px; margin: left 5px; margin: right 5px"><i> <br> <span style="color:#5e7dbd";> "walk forward" </span>,<span style="color:#EE822F";> "jump forward" </span></span>.</i></h2>
+              <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/gallery/walk_jump.mkv"
+                        type="video/mp4">
+              </video>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content has-text-centered">
+              <h2 class="subtitle is-5 handwriting" style="height: 40px; margin: left 5px; margin: right 5px"><i> <br> <span style="color:#5e7dbd";> "walk forward" </span>,<span style="color:#EE822F";> "sit down" </span></span>.</i></h2>
+              <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/gallery/walk_sit.mkv"
+                        type="video/mp4">
+              </video>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content has-text-centered">
+              <h2 class="subtitle is-5 handwriting" style="height: 40px; margin: left 5px; margin: right 5px"><i> <br> <span style="color:#5e7dbd";> "walk forward" </span>,<span style="color:#EE822F";> "turn around" </span></span>.</i></h2>
+              <div class="videobox">
+              <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                <source src="./static/images/gallery/walk_turn.mkv"
+                        type="video/mp4">
+              </video>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column">
+            <div class="content has-text-centered">
+              <div class="videobox">
+                <video poster="" id="pelvis" autoplay controls muted loop height="100%">
+                  <source src="./static/images/gallery/compose.mkv"
+                          type="video/mp4">
+                </video>
+              </div>
+              <p class="has-text-centered" style="margin-top: 10px; font-size: 1.3em;">
+                Overall visualization: <span style="color:#069b1c;font-weight:bold;">Dynamic Motion Composition</span> of <span style="color:#EE822F;font-weight:bold;">3 additional motions</span> after the initial motion <span style="color:#5e7dbd;font-weight:bold;">"walk forward"</span>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+<!---          Diversity       -->
+
+
+<!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{xiao2025motionstreamer,
+      title={MotionStreamer: Streaming Motion Generation via Diffusion-based Autoregressive Model in Causal Latent Space},
+      author={Xiao, Lixing and Lu, Shunlin and Pi, Huaijin and Fan, Ke and Pan, Liang and Zhou, Yueer and Feng, Ziyong and Zhou, Xiaowei and Peng, Sida and Wang, Jingbo},
+      journal={arXiv preprint arXiv:2503.15451},
+      year={2025}
+    }</code></pre>
+    </div>
+</section> -->
+<!--End BibTex citation -->
+
+
+
+
+
+<style>
+@keyframes flowingArrow {
+  0% {
+    opacity: 0.4;
+    transform: translateX(-3px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+  100% {
+    opacity: 0.4;
+    transform: translateX(-3px);
+  }
+}
+
+.videobox {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.videobox video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: transparent;
+}
+
+.fixed-height {
+  height: 300px;
+  border: none;
+  overflow: hidden;
+  background-color: transparent;
+}
+
+.fixed-height video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border: none;
+  background-color: transparent;
+}
+
+video {
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+</style>
+
+<script>
+// 添加到页面的script部分
+fetch('https://api.github.com/repos/Li-xingXiao/272-dim-Motion-Representation')
+  .then(response => response.json())
+  .then(data => {
+    document.querySelector('.github-stars').textContent = data.stargazers_count;
+  });
+</script>
+
 </body>
 </html>
